@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style> 
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #fe214f;
+  --primary-color-dark: #d4133a;
+  --secondary-color: #0b1423;
+  --secondary-color-dark: #091121;
+  --text-light: #cbd5e1;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  padding-top: 3rem;
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+
+.section__header::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 6rem;
+  white-space: nowrap;
+  opacity: 0.1;
+}
+
+.section__description {
+  color: var(--text-light);
+  line-height: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--white);
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header__btns a{
+  padding: 0.95rem 1rem;
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--white);
+  border: 1px solid;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn__primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn__primary:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.btn__secondary {
+  background-color: transparent;
+  border-color: var(--white);
+}
+
+.btn__secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__logo a span {
+  color: var(--secondary-color);
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.nav__links {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--secondary-color);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.link a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header {
+  background-image: linear-gradient(
+      rgba(11, 20, 35, 0.8),
+      rgba(11, 20, 35, 0.8)
+    ),
+    url(crowny.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header__container {
+  padding-block: 6rem;
+  text-align: center;
+}
+
+.header__container h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.header__container h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.5rem;
+  color: var(--primary-color);
+}
+
+.header__container .section__description {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__btns .btn {
+  min-width: 150px;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__image {
+  overflow: hidden;
+}
+
+.about__image img {
+  max-width: 380px;
+  margin-inline: auto;
+  border: 1rem solid var(--secondary-color-dark);
+}
+
+.about__content h4 {
+  max-width: 400px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.about__content .section__description {
+  margin-bottom: 1rem;
+}
+
+.about__content .section__description span {
+  color: var(--primary-color);
+}
+
+.about__progress {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.about__progress h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.about__progressbar {
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  height: 10px;
+  background-color: rgba(242, 244, 223, 0.2);
+  border-radius: 4px;
+  
+}
+
+
+.about__progressbar span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.service {
+  background-color: var(--secondary-color-dark);
+}
+
+.service__container .section__header::before {
+  content: "Service";
+}
+
+.service__container .section__description {
+  max-width: 600px;
+}
+
+.service__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.service__card {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.service__card:hover {
+  background-color: var(--primary-color);
+}
+
+.service__card span {
+  padding: 2px 10px;
+  font-size: 2rem;
+  color: var(--secondary-color-dark);
+  background-color: var(--white);
+  border-radius: 100%;
+  transition: 0.3s;
+}
+
+.service__card:hover span {
+  color: var(--primary-color);
+}
+
+.service__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.service__card p {
+  color: var(--text-light);
+}
+
+.resume__container .section__header {
+  text-align: center;
+}
+
+.resume__container .section__header::before {
+  content: "Brothers";
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.resume__container .section__description {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.resume__tablist {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.resume__tablist .btn {
+  min-width: 150px;
+  background-color: var(--secondary-color-dark);
+  border: none;
+}
+
+.resume__tablist .btn.active,
+.resume__tablist .btn:hover {
+  background-color: var(--primary-color);
+
+}
+
+.panel__grid {
+  /* display: grid; */
+  gap: 1rem;
+  display: none;
+}
+
+.panel__grid.active {
+  display: grid;
+  animation: show-panel 0.3s forwards;
+}
+
+.panel__grid.close {
+  animation: hide-panel 0.3s forwards;
+}
+
+@keyframes show-panel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-panel {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.panel__card {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--secondary-color-dark);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.panel__card:hover {
+  background-color: var(--primary-color);
+}
+
+.panel__card span {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.panel__card:hover span {
+  color: var(--white);
+}
+
+.panel__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.panel__card .section__description {
+  margin-bottom: 1rem;
+}
+
+.banner {
+  background-color: var(--primary-color);
+}
+
+.banner__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 0;
+}
+
+.banner__card {
+  text-align: center;
+}
+
+.banner__card:nth-child(2n - 1) {
+  border-right: 1px solid var(--white);
+}
+
+.banner__card h4 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.client {
+  background-color: var(--secondary-color-dark);
+}
+
+.client__container .section__header {
+  text-align: center;
+}
+
+.client__container .section__header::before {
+  content: "Brothers";
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.client__container .section__description {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.client__card {
+  max-width: 750px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.client__card p {
+  margin-bottom: 1rem;
+  line-height: 1.75rem;
+}
+
+.client__card h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fe214f;
+}
+
+.client__card h5 {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.client__card img {
+  max-width: 100px;
+  margin-inline: auto;
+  border-radius: 100%;
+}
+
+.blog__container .section__header::before {
+  content: "The Trio ";
+}
+
+.blog__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.blog__content {
+  padding: 1rem;
+  background-color: var(--secondary-color-dark);
+}
+
+.blog__content h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.blog__content .section__description {
+  margin-bottom: 2rem;
+}
+
+.blog__content > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.blog__content a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.blog__content a:hover {
+  color: var(--primary-color);
+}
+
+.blog__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer {
+  background-color: var(--secondary-color-dark);
+}
+
+.footer__container .section__header {
+  text-align: center;
+}
+
+.footer__container .section__header::before {
+  content: "Contact";
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer__container .section__description {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.footer__grid {
+  display: grid;
+  gap: 4rem 2rem;
+}
+
+.footer__content h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.footer__content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__socials a {
+  font-size: 1.25rem;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.footer__socials a:hover {
+  color: var(--primary-color);
+}
+
+.footer__form form {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.input__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__form input,
+.footer__form textarea {
+  flex: 1;
+  width: 100%;
+  padding: 0.75rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--text-light);
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+}
+
+.footer__form textarea {
+  min-height: 8rem;
+  margin-bottom: 1rem;
+}
+
+.footer__form .btn {
+  max-width: fit-content;
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (width > 540px) {
+  .panel__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a span {
+    color: var(--primary-color);
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service__card {
+    padding: 2rem;
+  }
+
+  .panel__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .banner__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .banner__card:nth-child(2n - 1),
+  .banner__card:nth-child(2) {
+    border-right: 1px solid var(--white);
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (width > 1024px) {
+  .panel__grid {
+    gap: 2rem;
+  }
+
+  .panel__card {
+    padding: 2rem;
+  }
+
+  .blog__grid {
+    gap: 2rem;
+  }
+
+  .blog__content {
+    padding: 2rem;
+  }
+}
+</style>
+    <title>Web Code Journey </title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">Yuvi<span>.</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li class="link"><a href="#home">Home</a></li>
+        <li class="link"><a href="#about">About</a></li>
+        <li class="link"><a href="#resume">Services</a></li>
+        <li class="link"><a href="#blog">Brotherhood</a></li>
+        <li class="link"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <header class="header" id="home">
+      <div class="section__container header__container">
+        
+        <h4>Hello, I'm God X Crowny</h4>
+        <h1>Owner of soul of hacker's group</h1>
+        <p class="section__description">
+          "You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one."
+        </p>
+        <div class="header__btns">
+         <a href="#contact" class="btn__primary">Contact Me</a>
+        
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="about-crowny.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <h4>Let's Introduce About Yuvi</h4>
+        <p class="section__description">
+          Hello, I'm Yuvraj Singh, admin of this group. And i am a creative web Designer on a mission
+          to elevate digital experiences. With a keen eye for detail and a flair
+          for creativity,
+          <span>I bring ideas to life in the digital realm.</span> My work is a
+          fusion of user-centric design and aesthetic innovation, creating
+          engaging and memorable interactions.
+        </p>
+        <p class="section__description">
+          Let's embark on a visual journey that
+          <span>transcends boundaries</span> and redefines the digital
+          landscape.
+        </p>
+        <div class="about__progress">
+          <h5>CSS</h5>
+          <div class="about__progressbar"></div>
+          <h5>Javascript</h5>
+          <div class="about__progressbar"></div>
+          <h5>Java</h5>
+          <div class="about__progressbar"></div>
+          <h5>SQL</h5>
+          <div class="about__progressbar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service" id="resume">
+      <div class="section__container service__container">
+        <h2 class="section__header">What We Do</h2>
+        <p class="section__description">
+          We craft seamless digital experiences, marrying intuitive web design
+          with captivating visuals. From user-centric interfaces to engaging
+          visual storytelling, a mastery of the designing.
+        </p>
+        <div class="service__grid">
+          <div class="service__card">
+            <span><i class="ri-mac-line"></i></span>
+            <div>
+              <h4>Carding</h4>
+              <p>
+                We provide tailored consultations and
+                optimize your needs and provide subscription of many social media app and buy books from playstore. Its Completely free of cost. 
+              </p>
+            </div>
+          </div>
+          <div class="service__card">
+            <span><i class="ri-heart-line"></i></span>
+            <div>
+              <h4>Frontend Development</h4>
+              <p>
+                We are a One-Stop Solution for delivering the best web design and development services. We render customized and affordable web design facilities to suit your requirements. Choose the best plans for building a responsive web design according to your needs.
+              </p>
+            </div>
+          </div>
+          <div class="service__card">
+            <span><i class="ri-quill-pen-fill"></i></i></span>
+            <div>
+              <h4>Bot Provider</h4>
+              <p>
+               We provides many bots and website that are very useful in phishing page or RAT development
+              </p>
+            </div>
+          </div>
+          <div class="service__card">
+            <span><i class="ri-customer-service-fill"></i></span>
+            <div>
+              <h4>Graphic Design and Illustration</h4>
+              <p>
+                Elevate your content with striking visuals and designing
+                marketing materials through our graphic design and illustration
+                services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!--
+    <section class="section__container resume__container" id="resume">
+      <h2 class="section__header">Kevin FFx <br> & <br>  God X Crowney</h2>
+      <p class="section__description">
+        “Brotherhood isn’t defined by blood but by the connection of souls.”
+      </p>
+      <div class="resume__tabs">
+        <div class="resume__tablist">
+          <button class="btn active" data-tab="1">About Us</button>
+
+          <button class="btn" data-tab="2">Experience</button>
+        </div>
+        <div class="resume__tabpanel">
+          <div class="panel__grid active" data-panel="1">
+            <div class="panel__card">
+              <span><i class="ri-graduation-cap-fill"></i></span>
+              <h4>Bachelor's Degree in Graphic Design</h4>
+              <p class="section__description">Crafting Visual Narratives</p>
+              <p class="section__description">
+                Armed with a Bachelor's degree in Graphic Design, I have honed
+                my skills in creating visually compelling narratives.
+              </p>
+            </div>
+            <div class="panel__card">
+              <span><i class="ri-graduation-cap-fill"></i></span>
+              <h4>Master's Degree in User Experience Design</h4>
+              <p class="section__description">Elevating Digital Interactions</p>
+              <p class="section__description">
+                A Master's degree in User Experience Design has equipped me with
+                advanced knowledge and expertise in enhancing interactions.
+              </p>
+            </div>
+            <div class="panel__card">
+              <span><i class="ri-graduation-cap-fill"></i></span>
+              <h4>Professional Certification in Web Development</h4>
+              <p class="section__description">
+                Bridging Design and Functionality
+              </p>
+              <p class="section__description">
+                A certification in Web Development underscores my commitment to
+                bridging the gap between design and functionality.
+              </p>
+            </div>
+          </div>
+          <div class="panel__grid" data-panel="2">
+            <div class="panel__card">
+              <span><i class="ri-macbook-fill"></i></span>
+              <h4>Mid-Level Designer</h4>
+              <p class="section__description">
+                Mastering the Art of User-Centric Design
+              </p>
+              <p class="section__description">
+                In the role of a Mid-Level Designer, I have evolved to
+                specialize in user-centric design, merging aesthetics with
+                functionality.
+              </p>
+            </div>
+            <div class="panel__card">
+              <span><i class="ri-macbook-fill"></i></span>
+              <h4>Junior Designer</h4>
+              <p class="section__description">Nurturing Creativity</p>
+              <p class="section__description">
+                As a Junior Designer, I am dedicated to honing my craft and
+                cultivating creative instincts.
+              </p>
+            </div>
+            <div class="panel__card">
+              <span><i class="ri-macbook-fill"></i></span>
+              <h4>Senior Design Strategist</h4>
+              <p class="section__description">Shaping Vision into Impact</p>
+              <p class="section__description">
+                As a Senior Design Strategist, my focus extends beyond execution
+                to strategic design thinking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <section class="banner">
+      <div class="section__container banner__container">
+        <div class="banner__card">
+          <h4>3+</h4>
+          <p>Years of Experience</p>
+        </div>
+        <div class="banner__card">
+          <h4>80+</h4>
+          <p> Carding Completed </p>
+        </div>
+        <div class="banner__card">
+          <h4>30+</h4>
+          <p>Satisfied Clients</p>
+        </div>
+        <div class="banner__card">
+          <h4>15+</h4>
+          <p>Global Reach</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="client">
+      <div class="section__container client__container">
+       <h2 class="section__header">Kevin FFx <br> & <br>  God X Crowney</h2>
+      <!--  <p class="section__description">
+          The seamless integration of innovation and user-centric design in
+          their work has left a lasting impression on our clients and elevated
+          our digital presence.
+        </p>-->
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides 
+            <div class="swiper-slide">
+              <div class="client__card">
+                <p>
+                  Their ability to create visually stunning and highly
+                  functional designs is exceptional. As the CEO of Digital
+                  Dynamics Agency, I have witnessed firsthand the positive
+                  impact they have on our projects.
+                </p>
+                <h4>Michael Rodriguez</h4>
+                <h5>CEO, Digital Dynamics Agency</h5>
+                <img src="assets/client-1.jpg" alt="client" />
+              </div>
+            </div>-->
+            <div class="swiper-slide">
+              <div class="client__card">
+                <h4>
+                  “Brotherhood isn’t defined by blood but by the connection of souls.”
+                </h4>
+              <!--  <h4></h4>
+                <h5></h5>
+                <img src="assets/client-2.jpg" alt="client" />-->
+              </div>
+            </div>
+           <!-- <div class="swiper-slide">
+              <div class="client__card">
+                <p>
+                  I had the pleasure of collaborating with them on a critical
+                  project for Innovate Startups. Their ability to translate our
+                  brand vision into a visually compelling user experience was
+                  truly impressive.
+                </p>
+                <h4>Alexandra Thompson</h4>
+                <h5>Founder, Innovate Startups</h5>
+                <img src="assets/client-3.jpg" alt="client" />-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container blog__container" id="blog">
+      <h2 class="section__header">Kevin & Crowney & Yuvi</h2>
+      <div class="blog__grid">
+        <div class="blog__card">
+          <img src="kevin.jpg" alt="blog" />
+          <div class="blog__content">
+            <h4>Kevin FFx</h4>
+            <p class="section__description">
+              “I believe in dreams and determination. Every step I take is towards building something meaningful.”
+            </p>
+            <div>
+            <!--  <a href="#">Read More</a>-->
+              <div class="blog__socials">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog__card">
+          <img src="crowny.jpg" alt="blog" />
+          <div class="blog__content">
+            <h4>God X Crowney</h4>
+            <p class="section__description">
+              “Strength isn’t just physical. It’s in the mind, the heart, and in the bonds we create with others.”
+            </p>
+            <div>
+              <!--<a href="#">Read More</a>-->
+              <div class="blog__socials">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog__card">
+          <img src="mask.jpg" alt="blog" />
+          <div class="blog__content">
+            <h4>Yuvraj Singh</h4>
+            <p class="section__description">
+              “Learn as if you will live forever, live like you will die tomorrow.”
+            </p>
+            <div>
+             <!--<a href="#">Read More</a>-->
+              <div class="blog__socials">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <h2 class="section__header">24/7 Support Hello Says</h2>
+        <p class="section__description">
+          A testament to our commitment, these testimonials showcase the
+          satisfaction of clients who've experienced our 24/7 support.
+        </p>
+        <div class="footer__grid">
+          <div class="footer__content">
+            <h4>Yuvi</h4>
+            <p>
+              Explore more of my work, connect with me on social media, or drop
+              a message.
+            </p>
+            <p>
+              Let's continue the design conversation and embark on new creative
+              journeys together.
+            </p>
+            <p>Thank you for visiting!</p>
+            <div class="footer__socials">
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+          </div>
+          <div class="footer__form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="2246ebe0-bd48-4fc0-9dab-9ca77831d7ef">
+              <div class="input__row">
+                <input type="text"  required="required"
+                name="Name"
+                placeholder="Your Name" />
+                <input type="email" 
+                name="Email"
+                placeholder="Your Email" />
+              </div>
+              <textarea placeholder="Your Message" name="Message" 
+              required="required"
+              ></textarea>
+              <button class="btn btn__primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 yuvi. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="telegram.js"></script>
+  </body>
+</html>
